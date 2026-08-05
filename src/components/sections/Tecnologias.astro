@@ -1,0 +1,75 @@
+---
+import { technologies } from "../../data/tech.ts";
+---
+
+<section
+  id="technologies"
+  class="flex min-h-svh items-center px-6 py-16 lg:px-16"
+>
+  <div class="mx-auto w-full max-w-7xl">
+    <!-- Título -->
+    <div class="mb-16">
+      <span
+        class="inline-flex border border-blue-400/20 bg-blue-400/5 px-4 py-2 text-sm font-bold uppercase tracking-widest text-[#59C2FF]"
+      >
+        Tecnologías
+      </span>
+    </div>
+
+    {
+      technologies.map(
+        (group: { title: string; techs: { name: string; icon: string }[] }) => (
+          <div class="mb-14">
+            <h3 class="mb-4 text-xs font-bold uppercase tracking-[0.15em] text-[#47AFAA]">
+              {group.title}
+            </h3>
+
+            <div
+              class="grid
+            grid-cols-2
+            sm:grid-cols-3
+            md:grid-cols-4
+            lg:grid-cols-5
+            xl:grid-cols-6
+            gap-4"
+            >
+              {group.techs.map((tech) => (
+                <article
+                  class="
+                  group
+                  flex
+                  aspect-square
+                  flex-col
+                  items-center
+                  justify-center
+                  gap-4
+
+                  border
+                  border-white/10
+
+                  bg-stone-900
+
+                  transition-all
+                  duration-300
+
+                  hover:border-blue-400/60
+                  hover:bg-stone-800
+                  hover:-translate-y-1
+                  "
+                >
+                  <i
+                    class={`${tech.icon} text-4xl text-stone-300 transition group-hover:text-[#59C2FF]`}
+                  />
+
+                  <span class="text-sm font-medium tracking-wide text-stone-300">
+                    {tech.name}
+                  </span>
+                </article>
+              ))}
+            </div>
+          </div>
+        ),
+      )
+    }
+  </div>
+</section>

@@ -1,0 +1,135 @@
+---
+const links = [
+  {
+    name: "Acerca de mí",
+    href: "#about",
+  },
+  {
+    name: "Tecnologías",
+    href: "#technologies",
+  },
+  {
+    name: "Proyectos",
+    href: "#projects",
+  },
+  {
+    name: "Experiencia",
+    href: "#experience",
+  },
+  {
+    name: "Laboratorio",
+    href: "#lab",
+  },
+  {
+    name: "Contacto",
+    href: "#contact",
+  },
+];
+---
+
+<aside
+  class="sticky left-0 top-0 flex h-screen w-64 flex-col justify-between border-r border-white/10 bg-[#0E0E0E] backdrop-blur-md"
+>
+  <!-- Parte superior -->
+  <div>
+    <!-- Perfil -->
+    <div class="space-y-4 p-6">
+      <div
+        class="flex h-16 w-16 items-center justify-center overflow-hidden rounded-xl border border-[#59C2FF]/30 bg-stone-900"
+      >
+        <img
+          src="/perfil.webp"
+          alt="Richard Aaron"
+          class="h-full w-full object-cover"
+        />
+      </div>
+
+      <div>
+        <h1
+          class="text-xs font-bold uppercase leading-5 tracking-[0.15em] text-[#59C2FF]"
+        >
+          Richard Aaron Ponce Villarroel
+        </h1>
+
+        <p class="mt-2 text-xs text-gray-400">FullStack Junior</p>
+      </div>
+    </div>
+
+    <!-- Navegación -->
+    <nav class="border-y border-white/10 py-4">
+      <ul>
+        {
+          links.map((link) => (
+            <li>
+              <a
+                href={link.href}
+                data-nav-link
+                class="group flex items-center gap-3 border-l-2 border-transparent px-6 py-3 text-xs font-bold uppercase tracking-[0.15em] text-stone-300 transition-all duration-300"
+              >
+                <span class="h-2.5 w-2.5 bg-stone-400 transition-colors duration-300" />
+
+                {link.name}
+              </a>
+            </li>
+          ))
+        }
+      </ul>
+    </nav>
+  </div>
+
+  <!-- Parte inferior -->
+  <footer class="space-y-6 p-6">
+    <a
+      href="/cv.pdf"
+      class="flex h-10 items-center justify-center border border-stone-300 text-xs uppercase tracking-[0.2em] text-stone-300 transition hover:border-blue-400 hover:text-[#59C2FF]"
+    >
+      Descargar CV
+    </a>
+
+    <div class="flex items-center gap-3">
+      <img
+        src="/avatar.webp"
+        alt="Avatar"
+        class="h-10 w-10 rounded-full object-cover"
+      />
+
+      <div class="text-[11px] uppercase tracking-wider leading-5">
+        <p class="text-[#59C2FF]">Status: Activo</p>
+        <p class="text-stone-400">Level: Junior</p>
+      </div>
+    </div>
+
+    <div class="flex items-center justify-between text-sm text-stone-300">
+      <a href="#" class="transition hover:text-[#59C2FF]">Github</a>
+
+      <a href="#" class="transition hover:text-[#59C2FF]">LinkedIn</a>
+
+      <a href="#" class="transition hover:text-[#59C2FF]">Mail</a>
+    </div>
+  </footer>
+</aside>
+
+<script>
+  const links = document.querySelectorAll("[data-nav-link]");
+  const sections = document.querySelectorAll("section[id]");
+
+  const observer = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (!entry.isIntersecting) return;
+
+        links.forEach((link) => link.classList.remove("nav-active"));
+
+        document
+          .querySelector(`[href="#${entry.target.id}"]`)
+          ?.classList.add("nav-active");
+      });
+    },
+    {
+      rootMargin: "-30% 0px -60% 0px",
+      threshold: 0,
+    },
+  );
+
+  sections.forEach((section) => observer.observe(section));
+</script>

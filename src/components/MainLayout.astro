@@ -1,21 +1,49 @@
 ---
 import "../../styles/global.css";
+import logo from "../../public/logo.png";
+import Footer from "../components/layouts/footer.astro";
+import Navbar from "../components/layouts/navbar.astro";
+import Hero from "../components/sections/Hero.astro";
+import Experiencia from "../components/sections/Experiencia.astro";
+import Tecnologias from "../components/sections/Tecnologias.astro";
+import Proyectos from "../components/sections/Proyectos.astro";
+import Laboratorio from "../components/sections/Lab.astro";
+import Contactate from "../components/sections/Contactate.astro";
 ---
 
 <html lang="es">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Mi Portafolio</title>
+
+    <!-- Icono -->
+    <link rel="icon" type="image/x-icon" href={logo.src} />
 
     <!-- FontAwesome -->
     <script
       src="https://kit.fontawesome.com/c75f29b3f2.js"
       crossorigin="anonymous"></script>
-
-    <title>Mi Portafolio</title>
   </head>
 
-  <body>
-    <slot />
+  <body class="bg-stone-950 text-white">
+    <div class="min-h-screen lg:grid lg:grid-cols-[16rem_1fr]">
+      <!-- Sidebar -->
+      <Navbar />
+
+      <!-- Contenido -->
+      <div class="flex min-h-screen flex-col">
+        <main class="flex-1">
+          <slot />
+        </main>
+        <Hero />
+        <Tecnologias />
+        <Proyectos />
+        <Experiencia />
+        <Laboratorio />
+        <Contactate />
+        <Footer />
+      </div>
+    </div>
   </body>
 </html>

@@ -1,2 +1,10 @@
 @import "tailwindcss";
 @import "./variables.css";
+
+.nav-active {
+    @apply border-blue-400 bg-blue-400/5 text-blue-400;
+}
+
+.nav-active span {
+    @apply bg-blue-400;
+}
