@@ -1,3 +1,21 @@
+import html from "../assets/iconos/html.svg";
+import css from "../assets/iconos/css.svg";
+import javascript from "../assets/iconos/javascript.svg";
+import typescript from "../assets/iconos/typescript.svg";
+import mysql from "../assets/iconos/mysql.svg";
+import sql from "../assets/iconos/sql.svg";
+import sass from "../assets/iconos/sass.svg";
+import tailwindcss from "../assets/iconos/tailwindcss.svg";
+import astro from "../assets/iconos/astro.svg";
+import bootstrap from "../assets/iconos/bootstrap.svg";
+import react from "../assets/iconos/react.svg";
+import vue from "../assets/iconos/vue.svg";
+import git from "../assets/iconos/git.svg";
+import vscode from "../assets/iconos/vscode.svg";
+import xamp from "../assets/iconos/xamp.svg";
+import wordpress from "../assets/iconos/wordpress.svg";
+import figma from "../assets/iconos/figma.svg";
+
 export const technologies = [
     // Lenguajes y tecnologías base
     {
@@ -5,27 +23,27 @@ export const technologies = [
         techs: [
             {
                 name: "HTML",
-                icon: "fa fa-html5b"
+                icon: html.src
             },
             {
                 name: "CSS",
-                icon: "fa fa-html5b"
+                icon: css.src
             },
             {
                 name: "JavaScript",
-                icon: "fa fa-html5b"
+                icon: javascript.src
             },
             {
                 name: "TypeScript",
-                icon: "fa fa-html5b"
+                icon: typescript.src
             },
             {
                 name: "MySQL",
-                icon: "fa fa-html5b"
+                icon: mysql.src
             },
             {
                 name: "SQL",
-                icon: "fa fa-html5b"
+                icon: sql.src
             }
         ]
     },
@@ -35,15 +53,15 @@ export const technologies = [
         techs: [
             {
                 name: "Sass",
-                icon: "fa fa-html5b"
+                icon: sass.src
             },
             {
                 name: "TailwindCss",
-                icon: "fa fa-html5b"
+                icon: tailwindcss.src
             },
             {
                 name: "Bootstrap",
-                icon: "fa fa-html5b"
+                icon: bootstrap.src
             }
         ]
     },
@@ -53,15 +71,15 @@ export const technologies = [
         techs: [
             {
                 name: "React",
-                icon: "fa fa-html5b"
+                icon: react.src
             },
             {
                 name: "Vue",
-                icon: "fa fa-html5b"
+                icon: vue.src
             },
             {
                 name: "Astro",
-                icon: "fa fa-html5b"
+                icon: astro.src
             }
         ]
     },
@@ -71,23 +89,23 @@ export const technologies = [
         techs: [
             {
                 name: "Git",
-                icon: "fa fa-html5b"
+                icon: git.src
             },
             {
                 name: "VS Code",
-                icon: "fa fa-html5b"
+                icon: vscode.src
             },
              {
                 name: "Xamp",
-                icon: "fa fa-html5b"
+                icon: xamp.src
             },
             {
                 name: "WordPress",
-                icon: "fa fa-html5b"
+                icon: wordpress.src
             },
              {
                 name: "Figma",
-                icon: "fa fa-html5b"
+                icon: figma.src
             }
         ]
     }
