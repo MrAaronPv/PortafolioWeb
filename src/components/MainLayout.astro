@@ -9,6 +9,7 @@ import Tecnologias from "../components/sections/Tecnologias.astro";
 import Proyectos from "../components/sections/Proyectos.astro";
 import Laboratorio from "../components/sections/Lab.astro";
 import Contactate from "../components/sections/Contactate.astro";
+import AlertPage from "../components/layouts/alertPage.astro";
 ---
 
 <html lang="es">
@@ -29,6 +30,7 @@ import Contactate from "../components/sections/Contactate.astro";
   <body class="bg-stone-950 text-white">
     <div class="min-h-screen lg:grid lg:grid-cols-[16rem_1fr]">
       <!-- Sidebar -->
+      <AlertPage />
       <Navbar />
 
       <!-- Contenido -->
