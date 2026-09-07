@@ -4,7 +4,7 @@ import AboutIcon from "../../assets/imagenes/myavatar.png";
 
 <section
   id="about"
-  class="flex min-h-[calc(100svh-4rem)] items-center px-6 py-12 lg:px-16"
+  class="flex min-h-[calc(100svh-4rem)] items-center px-6 py-12 lg:px-16 border-b border-white/10"
 >
   <div
     class="mx-auto grid w-full max-w-7xl grid-cols-1 items-center gap-16 lg:grid-cols-2"
@@ -39,18 +39,28 @@ import AboutIcon from "../../assets/imagenes/myavatar.png";
       </p>
 
       <div class="flex flex-wrap gap-4">
-        <a
-          href=""
-          class="border border-[#59C2FF] px-8 py-4 text-xs uppercase tracking-[.25em] text-[#59C2FF] transition hover:bg-[#59C2FF] hover:text-black"
+        <button
+          type="button"
+          id="openModal"
+          class="cursor-pointer px-8 py-4 group relative flex h-12 items-center justify-center overflow-hidden border border-[#59C2FF] text-xs uppercase tracking-[0.2em] text-[#59C2FF] transition-colors duration-500 ease-in-out hover:text-[#201F1F]"
         >
-          Ver_Archivo
-        </a>
+          <span class="relative z-10">Ver archivo</span>
+
+          <span
+            class="absolute inset-y-0 right-0 w-0 bg-[#59C2FF] transition-all duration-500 ease-in-out group-hover:left-0 group-hover:w-full"
+          ></span>
+        </button>
 
         <a
-          href="#"
-          class="border border-[#59C2FF] px-8 py-4 text-xs uppercase tracking-[.25em] text-[#59C2FF] transition hover:bg-[#59C2FF] hover:text-black"
+          href="/docs/CV_RichardAaronPonceVillarroel.docx"
+          download="CV_RichardAaronPonceVillarroel.docx"
+          class="px-8 py-4 group relative flex h-12 items-center justify-center overflow-hidden border border-[#59C2FF] text-xs uppercase tracking-[0.2em] text-[#59C2FF] transition-colors duration-500 ease-in-out hover:text-[#201F1F]"
         >
-          Descargar_CV
+          <span class="relative z-10">Descargar CV</span>
+
+          <span
+            class="absolute inset-y-0 right-0 w-0 bg-[#59C2FF] transition-all duration-500 ease-in-out group-hover:left-0 group-hover:w-full"
+          ></span>
         </a>
       </div>
     </div>

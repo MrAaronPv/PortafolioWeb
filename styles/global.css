@@ -1,10 +1,17 @@
 @import "tailwindcss";
 @import "./variables.css";
 
+html {
+  scroll-behavior: smooth;
+}
+
 .nav-active {
-    @apply border-blue-400 bg-blue-400/5 text-blue-400;
+    @apply border-l-4 border-[#59C2FF] text-[#59C2FF];
+}
+.nav-active:hover {
+    @apply ml-0
 }
 
 .nav-active span {
-    @apply bg-blue-400;
+    @apply bg-[#59C2FF];
 }

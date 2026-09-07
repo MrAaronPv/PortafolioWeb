@@ -46,71 +46,89 @@ const links = [
 ];
 ---
 
-<aside
-  class="sticky left-0 top-0 flex h-screen w-64 flex-col justify-between border-r border-white/10 bg-[#0E0E0E] backdrop-blur-md"
+<!-- Responsive Menu button -->
+<button
+  id="menuBtn"
+  class="fixed left-4 top-4 z-50 flex h-11 w-11 items-center justify-center border border-white/10 bg-[#0E0E0E] text-[#C8C8B0] lg:hidden"
+  aria-label="Abrir menú"
 >
-  <!-- Parte superior -->
-  <div>
-    <!-- Perfil -->
-    <div class="space-y-4 p-6">
-      <div
-        class="flex h-16 w-16 items-center justify-center overflow-hidden rounded-xl border border-[#59C2FF]/30 bg-stone-900"
-      >
-        <img
-          src={avatar.src}
-          alt="Richard Aaron"
-          class="h-full w-full object-cover"
-        />
-      </div>
+  <i class="fa-solid fa-bars text-xl"></i>
+</button>
 
-      <div>
-        <h1
-          class="text-xs font-bold uppercase leading-5 tracking-[0.15em] text-[#59C2FF]"
-        >
-          Richard Aaron Ponce Villarroel
-        </h1>
+<!-- Overlay oscuro -->
+<div
+  id="menuOverlay"
+  class="fixed inset-0 z-30 hidden bg-black/60 backdrop-blur-sm lg:hidden"
+>
+</div>
 
-        <p class="mt-2 text-xs text-gray-400">FullStack Junior</p>
-      </div>
+<!-- Nav - Aside -->
+<aside
+  class="sticky left-0 top-0 flex justify-center h-screen w-64 flex-col border-r border-white/10 bg-[#0E0E0E] backdrop-blur-md"
+>
+  <!-- Perfil -->
+  <div class="space-y-4 p-6">
+    <div
+      class="flex h-16 w-16 items-center justify-center overflow-hidden rounded-xl border border-[#59C2FF]/30 bg-stone-900"
+    >
+      <img
+        src={avatar.src}
+        alt="Richard Aaron"
+        class="h-full w-full object-cover"
+      />
     </div>
 
-    <!-- Navegación -->
-    <nav class="border-y border-white/10 py-4">
-      <ul>
-        {
-          links.map((link) => {
-            const Icon = link.icon;
+    <div>
+      <h1
+        class="text-xs font-bold uppercase leading-5 tracking-[0.15em] text-[#59C2FF]"
+      >
+        Richard Aaron Ponce Villarroel
+      </h1>
 
-            return (
-              <li>
-                <a
-                  href={link.href}
-                  data-nav-link
-                  class="group flex items-center gap-3 border-l-2 border-transparent px-6 py-3 text-xs font-bold uppercase tracking-[0.15em] text-stone-300 transition-all duration-300"
-                >
-                  <Icon
-                    size={14}
-                    stroke-Width={2}
-                    class="text-stone-400 transition-colors duration-300 group-hover:text-stone-100"
-                  />
-
-                  {link.name}
-                </a>
-              </li>
-            );
-          })
-        }
-      </ul>
-    </nav>
+      <p class="mt-2 text-xs text-[#D9D9D9]">FullStack Junior</p>
+    </div>
   </div>
 
+  <!-- Navegación -->
+  <nav class="border-y border-white/10 py-10">
+    <ul>
+      {
+        links.map((link) => {
+          const Icon = link.icon;
+
+          return (
+            <li>
+              <a
+                href={link.href}
+                data-nav-link
+                class="group flex items-center gap-3 px-6 py-3 text-xs font-bold uppercase tracking-[0.15em] text-[#BBCCB0] transition-all duration-300 hover:text-[#59C2FF] hover:ml-1"
+              >
+                <Icon
+                  size={16}
+                  class="text-current transition-colors duration-300 group-hover:text-[#59C2FF]"
+                />
+
+                {link.name}
+              </a>
+            </li>
+          );
+        })
+      }
+    </ul>
+  </nav>
+
   <!-- Parte inferior -->
-  <footer class="space-y-6 p-6">
+  <footer class="space-y-6 p-8">
     <a
-      href="/cv.pdf"
-      class="flex h-10 items-center justify-center border border-stone-300 text-xs uppercase tracking-[0.2em] text-stone-300 transition hover:border-blue-400 hover:text-[#59C2FF]"
+      href="/docs/CV_RichardAaronPonceVillarroel.docx"
+      download="CV_RichardAaronPonceVillarroel.docx"
+      class="group relative flex h-12 items-center justify-center overflow-hidden border border-[#59C2FF] text-xs uppercase tracking-[0.2em] text-[#59C2FF] transition-colors duration-500 ease-in-out hover:text-[#201F1F]"
     >
-      Descargar CV
+      <span class="relative z-10">Descargar CV</span>
+
+      <span
+        class="absolute inset-y-0 right-0 w-0 bg-[#59C2FF] transition-all duration-500 ease-in-out group-hover:left-0 group-hover:w-full"
+      ></span>
     </a>
 
     <div class="flex items-center gap-3">
@@ -122,27 +140,35 @@ const links = [
 
       <div class="text-[11px] uppercase tracking-wider leading-5">
         <p class="text-[#59C2FF]">Status: Activo</p>
-        <p class="text-stone-400">Level: Junior</p>
+        <p class="text-[#C8C8B0]">Level: Junior</p>
       </div>
     </div>
 
-    <div class="flex items-center justify-between text-sm text-stone-300">
+    <div class="flex items-center justify-between text-3xl">
       <a
         href="https://github.com/MrAaronPv"
         target="_blank"
-        class="transition hover:text-[#59C2FF]">Github</a
+        rel="noopener noreferrer"
+        class="text-[#fffff] transition duration-200 ease-in hover:scale-120"
       >
+        <i class="fa-brands fa-github"></i>
+      </a>
 
       <a
         href="https://www.linkedin.com/in/aaron-ponce-v-b18705273/"
         target="_blank"
-        class="transition hover:text-[#59C2FF]">LinkedIn</a
+        rel="noopener noreferrer"
+        class="text-[#C8C8B0] transition duration-200 ease-in hover:scale-120 hover:text-[#59C2FF]"
       >
+        <i class="fa-brands fa-linkedin-in text-[#0A66C2]"></i>
+      </a>
 
       <a
         href="mailto:aaronponcevi@gmail.com"
-        class="transition hover:text-[#59C2FF]">Mail</a
+        class="transition duration-200 ease-in hover:scale-120 hover:text-[#59C2FF]"
       >
+        <i class="fa-solid fa-envelope text-[#EA4335]"></i>
+      </a>
     </div>
   </footer>
 </aside>
