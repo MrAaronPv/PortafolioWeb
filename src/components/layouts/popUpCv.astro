@@ -1,0 +1,54 @@
+---
+const documentUrl =
+  "https://portafolio-web-richard-ponce.vercel.app/docs/CV_RichardAaronPonceVillarroel.docx";
+
+const officeViewerUrl = `https://view.officeapps.live.com/op/embed.aspx?src=${encodeURIComponent(documentUrl)}`;
+---
+
+<dialog
+  id="cvModal"
+  class="m-auto h-[90vh] w-[min(95vw,1000px)] border border-[#59C2FF]/40 bg-[#201F1F] p-0 text-white backdrop:bg-black/60 backdrop:backdrop-blur-sm"
+  aria-label="Vista previa de currículum"
+>
+  <div class="flex h-full flex-col">
+    <header
+      class="flex items-center justify-between border-b border-[#0E0E0E] px-5 py-4"
+    >
+      <h2 class="text-xs font-bold uppercase text-[#C8C8B0]">
+        Currículum vitae - Richard Aaron Ponce Villarroel
+      </h2>
+
+      <button
+        id="closeModal"
+        type="button"
+        aria-label="Cerrar currículum"
+        class="cursor-pointer text-xl text-[#C8C8B0] transition-colors duration-300 hover:text-[#ffffff]"
+      >
+        <i class="fa-solid fa-xmark"></i>
+      </button>
+    </header>
+
+    <iframe
+      src={officeViewerUrl}
+      title="Currículum de Richard Aaron Ponce Villarroel"
+      class="min-h-0 flex-1 bg-white"></iframe>
+  </div>
+</dialog>
+
+<script is:inline>
+  const openButton = document.querySelector("#openModal");
+  const modal = document.querySelector("#cvModal");
+  const closeButton = document.querySelector("#closeModal");
+
+  openButton?.addEventListener("click", () => {
+    modal?.showModal();
+  });
+
+  closeButton?.addEventListener("click", () => {
+    modal?.close();
+  });
+
+  modal?.addEventListener("click", (event) => {
+    if (event.target === modal) modal.close();
+  });
+</script>

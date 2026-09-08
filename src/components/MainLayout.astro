@@ -10,6 +10,7 @@ import Proyectos from "../components/sections/Proyectos.astro";
 import Laboratorio from "../components/sections/Lab.astro";
 import Contactate from "../components/sections/Contactate.astro";
 import AlertPage from "../components/layouts/alertPage.astro";
+import PopupCv from "../components/layouts/popUpCv.astro";
 ---
 
 <html lang="es">
@@ -28,7 +29,7 @@ import AlertPage from "../components/layouts/alertPage.astro";
   </head>
 
   <body class="bg-[#0E0E0E] text-white">
-    <AlertPage />
+    <!-- <AlertPage /> -->
 
     <div
       class="min-h-screen lg:grid lg:grid-cols-[16rem_1fr] 2xl:grid-cols-[18rem_1fr]"
@@ -41,6 +42,7 @@ import AlertPage from "../components/layouts/alertPage.astro";
           <slot />
         </main>
         <Hero />
+        <PopupCv />
         <Tecnologias />
         <Proyectos />
         <Experiencia />

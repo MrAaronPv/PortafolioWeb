@@ -13,11 +13,7 @@ export const projects = [
             "Git",
             "Postman",
         ],
-        images: [
-            "image.1",
-            "image.2",
-            "image.3",
-        ],
+        images: "https://placehold.co/120x120",
         explanation:"Participé en el desarrollo del sitio web corporativo de SanzSolutions, transformando los diseños de Figma en una interfaz moderna, responsive y optimizada para distintos dispositivos. Utilicé Astro para estructurar el proyecto y crear componentes reutilizables, TypeScript para la integración y manejo de conexiones con APIs, y JavaScript para implementar animaciones, interacciones y comportamientos dinámicos en el DOM. También colaboré en el mantenimiento, corrección de incidencias y control de versiones con Git." ,
         link:"https://www.sanz.pe/",
     },
