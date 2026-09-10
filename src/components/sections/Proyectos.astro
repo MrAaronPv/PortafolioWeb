@@ -12,70 +12,63 @@ import { projects } from "../../data/proyect";
     </span>
 
     <!-- Descripción -->
-    <p class="max-w-3xl text-base leading-6 text-stone-300">
-      Colección de proyectos personales desarrollados para explorar nuevas
-      ideas, tecnologías y experiencias digitales interactivas.
+    <p class="leading-relaxed text-[#BBCCB0] text-[clamp(.95rem,1vw,1.1rem)]">
+      Una selección de proyectos personales y trabajos profesionales en los que
+      he participado, creados para explorar nuevas ideas, tecnologías y
+      experiencias digitales interactivas. Cada proyecto refleja mi enfoque en
+      el diseño, la funcionalidad y la creación de soluciones web atractivas y
+      útiles.
     </p>
 
     <!-- Lista -->
     <div class="flex flex-col gap-12">
       {
-          projects.map((projects) => (
-            <!-- Proyecto -->
-            <article class="overflow-hidden border border-stone-700/30 bg-stone-900">              
-              <header
-                class="flex items-center justify-between border-b border-stone-700/30 bg-zinc-100 px-6 py-2"
-              >
-                <span class="text-xs font-bold uppercase text-stone-900">
-                  {projects.name}
-                </span>
+        projects.map((projects) => (
+          // <!-- Proyecto -->
+          <article class="overflow-hidden border border-[#1C1B1B]/30 bg-[#1C1B1B]">
+            <header class="flex items-center justify-between border-b border-[#1C1B1B]/30 bg-[#f3f3f3] px-6 py-2">
+              <span class="text-xs font-bold uppercase text-stone-900">
+                {projects.name}
+              </span>
 
-                <div class="flex gap-2">
-                  <span class="h-2 w-2 rounded-full bg-red-300"></span>
-                  <span class="h-2 w-2 rounded-full bg-amber-200"></span>
-                  <span class="h-2 w-2 rounded-full bg-blue-400"></span>
-                </div>
-              </header>
-
-              <div class="relative aspect-video overflow-hidden">
-                <div class="absolute inset-0 bg-black/40">
-                  {projects.images}
-                </div>
-
-                {
-                  projects.technologies.map((tech) => (
-                    <div class="absolute bottom-4 left-4 flex gap-10">
-                      <span
-                        class="border border-orange-500/30 bg-stone-900 px-2 py-1 text-xs text-orange-500"
-                      >
-                        {tech}
-                      </span>
-                    </div>
-                  ))
-                }
+              <div class="flex gap-2">
+                <span class="h-2 w-2 rounded-full bg-red-300" />
+                <span class="h-2 w-2 rounded-full bg-amber-300" />
+                <span class="h-2 w-2 rounded-full bg-blue-300" />
               </div>
+            </header>
 
-              <div class="flex flex-col gap-5 border-t border-stone-700/30 p-6">
-                <p class="text-base leading-6 text-stone-300">
-                  {projects.explanation}
-                </p>
-                <a
-                  href={projects.link}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  class="w-fit relative px-8 py-4 group flex h-10 items-center justify-center overflow-hidden border border-[#59C2FF] text-xs uppercase tracking-widest font-bold text-[#59C2FF] transition-colors duration-600 ease-in-out hover:text-[#201F1F]"
-                >
-                  <span class="relative z-10">Ver_Proyecto</span>
+            <div class="relative aspect-video overflow-hidden">
+              <div class="absolute inset-0 bg-black/40">{projects.images}</div>
+
+              <div class="absolute bottom-4 left-4 flex flex-wrap gap-2">
+                {projects.technologies.map((tech: any) => (
                   <span
-                    class="absolute inset-y-0 right-0 w-0 bg-[#59C2FF] transition-all duration-600 ease-in-out group-hover:left-0 group-hover:w-full"
-                  ></span>
-                </a>
-
-                
+                    class={`${tech.style} text-xs py-2 px-4 rounded-2xl cursor-cell`}
+                  >
+                    {tech.name}
+                  </span>
+                ))}
               </div>
-            </article>
-          ))
-         }
+            </div>
+
+            <div class="flex flex-col gap-5 border-t border-stone-700/30 p-6">
+              <p class="text-base leading-6 text-[#BBCCB0]">
+                {projects.explanation}
+              </p>
+              <a
+                href={projects.link}
+                target="_blank"
+                rel="noopener noreferrer"
+                class="w-fit relative px-6 py-4 mt-2 mb-2  group flex h-10 items-center justify-center overflow-hidden border border-[#59C2FF] text-xs uppercase tracking-widest font-bold text-[#59C2FF] transition-colors duration-600 ease-in-out hover:text-[#201F1F]"
+              >
+                <span class="relative z-10">Ver_Pagina_Web</span>
+                <span class="absolute inset-y-0 right-0 w-0 bg-[#59C2FF] transition-all duration-600 ease-in-out group-hover:left-0 group-hover:w-full" />
+              </a>
+            </div>
+          </article>
+        ))
+      }
     </div>
   </div>
 </section>
